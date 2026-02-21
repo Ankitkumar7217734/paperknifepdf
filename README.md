@@ -4,13 +4,10 @@
 
 # PaperKnife
 
-**A simple, honest PDF utility that respects your privacy.**
+**A simple, honest PDF & Image utility that respects your privacy.**
 
 [![License](https://img.shields.io/badge/license-AGPL--3.0-rose.svg)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/potatameister/PaperKnife?style=flat&color=rose)](https://github.com/potatameister/PaperKnife/stargazers)
-[![Web App](https://img.shields.io/badge/web-live-emerald.svg)](https://potatameister.github.io/PaperKnife/)
-[![Android App](https://img.shields.io/badge/android-apk-blue.svg)](https://github.com/potatameister/PaperKnife/releases/latest)
-[![Twitter](https://img.shields.io/badge/twitter-@potatameister-black?logo=x)](https://x.com/potatameister)
+[![GitHub Stars](https://img.shields.io/github/stars/Ankitkumar7217734/paperknifepdf?style=flat&color=rose)](https://github.com/Ankitkumar7217734/paperknifepdf/stargazers)
 
 ---
 
@@ -23,39 +20,25 @@
 
 ---
 
-### Why I built this
+### Why this was built
 
 Most PDF websites ask you to upload your sensitive documents—bank statements, IDs, contracts—to their servers. Even if they promise to delete them, your data still leaves your device and travels across the internet.
 
-I built **PaperKnife** to solve this. It's a collection of tools that run entirely in your browser or on your phone. Your files never leave your memory, they aren't stored in any database, and no server ever sees them. It works 100% offline.
+**PaperKnife** solves this. It's a collection of tools that run entirely in your browser or on your phone. Your files never leave your memory, they aren't stored in any database, and no server ever sees them. It works 100% offline.
 
 ### What it can do
 
-*   **Modify:** Merge multiple files, split pages, rotate, and rearrange.
-*   **Optimize:** Reduce file size with different quality presets.
-*   **Secure:** Encrypt files with passwords or remove them locally.
-*   **Convert:** Convert between PDF and images (JPG/PNG) or plain text.
-*   **Sign:** Add an electronic signature to your documents safely.
-*   **Sanitize:** Deep clean metadata (like Author or Producer) to keep your files anonymous.
+- **Modify:** Merge multiple files, split pages, rotate, and rearrange.
+- **Optimize:** Reduce file size of PDFs and Images with different quality presets.
+- **Secure:** Encrypt files with passwords or remove them locally.
+- **Convert:** Convert between PDF and images (JPG/PNG/WEBP) or plain text.
+- **Sign:** Add an electronic signature to your documents safely.
+- **Sanitize:** Deep clean metadata (like Author or Producer) to keep your files anonymous.
 
 ### How to use it
 
-*   **On Android:** Download the [latest APK](https://github.com/potatameister/PaperKnife/releases/latest) or get it from:
-
-[<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.png" height="80" alt="Get it at IzzyOnDroid">](https://apt.izzysoft.de/packages/com.paperknife.app)
-
-*   **On the Web:** Visit the [live site](https://potatameister.github.io/PaperKnife/). You can use it like any other website, or "install" it as a PWA for offline access.
-
----
-
-### Support the project
-
-PaperKnife is a solo project. It's open-source, ad-free, and tracker-free because I believe privacy is a right, not a luxury.
-
-If this tool has saved you time or kept your data safe, please consider:
-*   **Sponsoring:** Support development via [GitHub Sponsors](https://github.com/sponsors/potatameister).
-*   **Giving a Star:** It helps other people find the project.
-*   **Spreading the word:** Share it with anyone who handles sensitive documents.
+- **On Android:** Clone the repository and build the APK using Capacitor, or use the web version.
+- **On the Web:** Once hosted, you can use it like any other website, or "install" it as a PWA for offline access.
 
 ---
 
@@ -66,4 +49,5 @@ PaperKnife is built with **React** and **TypeScript**. The core processing is ha
 This project is licensed under the **GNU AGPL v3** to ensure it remains open and transparent forever.
 
 ---
-*Made with care by [potatameister](https://github.com/potatameister)*
+
+_Made with care by [Ankitkumar7217734](https://github.com/Ankitkumar7217734)_
