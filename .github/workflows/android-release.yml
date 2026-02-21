@@ -2,7 +2,7 @@ name: Build & Sign Android APK
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -37,8 +37,8 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
-          java-version: '21'
+          distribution: "zulu"
+          java-version: "21"
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
@@ -60,32 +60,21 @@ jobs:
         run: |
           # Clean assets
           rm -rf public/tesseract/
-          
+
           # Rebuild without OCR using environment variable
           export VITE_DISABLE_OCR=true
           npm run build
           npx cap sync android
-          
+
           cd android
           ./gradlew assembleRelease
           mv app/build/outputs/apk/release/app-release-unsigned.apk ../paperknife-fdroid-unsigned.apk
 
-      - name: Sign Both APKs
-        id: sign_app
-        uses: ilharp/sign-android-release@v2
-        with:
-          releaseDir: .
-          signingKey: ${{ secrets.ANDROID_SIGNING_KEY }}
-          keyAlias: ${{ secrets.ANDROID_ALIAS }}
-          keyStorePassword: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
-          buildToolsVersion: "34.0.0"
-
       - name: Rename & Prepare Artifacts
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          cp paperknife-global-unsigned-signed.apk "paperknife-v${VERSION}.apk"
-          cp paperknife-fdroid-unsigned-signed.apk "paperknife-lite-v${VERSION}.apk"
+          cp paperknife-global-unsigned.apk "paperknife-v${VERSION}-unsigned.apk"
+          cp paperknife-fdroid-unsigned.apk "paperknife-lite-v${VERSION}-unsigned.apk"
           echo "APP_VERSION=${VERSION}" >> $GITHUB_ENV
 
       - name: Upload Artifacts
@@ -93,6 +82,6 @@ jobs:
         with:
           name: PaperKnife-v${{ env.APP_VERSION }}
           path: |
-            paperknife-v${{ env.APP_VERSION }}.apk
-            paperknife-lite-v${{ env.APP_VERSION }}.apk
+            paperknife-v${{ env.APP_VERSION }}-unsigned.apk
+            paperknife-lite-v${{ env.APP_VERSION }}-unsigned.apk
           if-no-files-found: error
